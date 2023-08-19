@@ -1,3 +1,47 @@
+header{
+    height: 100vh;
+    background: url(images/coucher-soleil-nuages-roses-dans-ciel-tempete-mer-contre-montagne-chapeau-neige-ai-genere-idee-graphique-pour-arriere-plan-ecran-impression-haute-qualite.jpg) no-repeat center /cover;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    padding-inline: 10rem;
+    font-family: OpenSans;
+}
+nav ul{
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+ nav ul li a {
+    text-decoration: none;
+    display: block;
+    padding: .5rem .7rem;
+    background-color: #009982;
+    color: #fff;
+}
+nav ul li{
+
+}
+.texte{
+    font-size: 4rem;
+    color: #fff;
+    font-family: Antonio;
+    margin: 10rem;
+    background-color: #ffffff10;
+    backdrop-filter: blur(2px);
+    padding: 2rem;
+}
+.texte button{
+    border: none;
+    display: block;
+    margin-inline: auto;
+    margin-top: 2rem;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    font-family: OpenSans;
+    font-size: 1.5rem;
+}
 .success{
     background-color:#37d8e4;
     color: #fff;
@@ -14,17 +58,15 @@ div{
     display: inline-block;
 }
 span{
-    font-family: sans-serif;
-    /* width: 25px; */
+    font-family: OpenSans;
     text-align: center;
-    padding: .5rem .1rem;
+    padding: .5rem .2rem;
     outline: 1px solid #010028;
     border-radius: 5px;
     vertical-align: middle;
-    margin-block: 1.5rem; 
-    /* margin-inline:2px;  */
+    margin-block: .5rem; 
     display: inline-block;
-    height: 55px;
+    height: 40px;
     font-size: 2rem;
     backdrop-filter: blur(.5);
 }

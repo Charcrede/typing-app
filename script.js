@@ -34,7 +34,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
     input.addEventListener("keydown", function (key) {
-        key.key
         if (key.key === 'Backspace' && i > 0) {
             u--;
             i--;
@@ -48,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
         for (let i = 0; i < tab.length; i++) {
             div = document.createElement("div");
             space = document.createElement("span")
-            space.textContent = " ";
+            space.innerHTML = "&nbsp;";
             for (let u = 0; u < tab[i].length; u++) {
                 span = document.createElement("span");
                 span.textContent = tab[i][u];

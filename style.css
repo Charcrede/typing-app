@@ -10,9 +10,13 @@
     background-color: #e4a237;
     color: #fff;
 }
+div{
+    display: inline-block;
+}
 span{
-    /* background-color: #fff;
-    color: #010028; */
+    font-family: sans-serif;
+    /* width: 25px; */
+    text-align: center;
     padding: .5rem .1rem;
     outline: 1px solid #010028;
     border-radius: 5px;
@@ -21,7 +25,7 @@ span{
     /* margin-inline:2px;  */
     display: inline-block;
     height: 55px;
-    font-size: 3rem;
+    font-size: 2rem;
     backdrop-filter: blur(.5);
 }
 .currency{

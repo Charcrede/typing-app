@@ -9,13 +9,16 @@ document.addEventListener("DOMContentLoaded", function () {
     let phrase = "La clé du succès pour taper rapidement et avec précision consiste à utiliser tous ses doigts! Pour apprendre la bonne technique de frappe, utilisez une méthode adaptée à votre clavier.";
     let entered = "";
     let i = 0;
+    let tab = phrase.split(" ");
     let u = 0;
     let tabs = [];
+    let space;
     let errorsCount = 0;
     let time;
     let sens;
     firstTap = 0;
     let span;
+    let div;
     let spans;
     let precis;
     let count = 0;
@@ -31,6 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
     input.addEventListener("keydown", function (key) {
+        key.key
         if (key.key === 'Backspace' && i > 0) {
             u--;
             i--;
@@ -41,14 +45,17 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
     function diplayLetters() {
-        for (let i = 0; i < tabs.length; i++) {
-            span = document.createElement("span");
-            if (tabs[i]=== " ") {
-                span.innerHTML = "&nbsp;";
-            }else{
-                span.textContent = tabs[i];
+        for (let i = 0; i < tab.length; i++) {
+            div = document.createElement("div");
+            space = document.createElement("span")
+            space.textContent = " ";
+            for (let u = 0; u < tab[i].length; u++) {
+                span = document.createElement("span");
+                span.textContent = tab[i][u];
+                div.appendChild(span)
             }
-            sentence.appendChild(span)
+            sentence.appendChild(div)
+            sentence.appendChild(space)
         }
     };
     function typing() {
@@ -76,21 +83,20 @@ document.addEventListener("DOMContentLoaded", function () {
     function timing() {
         let min;
         let sec;
-        let tab = phrase.split(" ");
         time = setInterval(() => {
             count++;
             sec = count - min * 60;
             min = Math.floor(count / 60);
             temps.innerText = `${min} min: ${sec} secondes`
             if (i === sens.length) {
-               clearInterval(time)
-               score.style.display = "block";
-               vitesse = Math.ceil( tab.length / ((count - (errorsCount*0.5))/60));
-               let precis = Math.floor(((sens.length - errorsCount) / sens.length) *100);
-               pourcent.innerText = `${precis}%`
-               es.innerText = `${vitesse}`;
-               errors.innerText = `${errorsCount}`;
-               console.log(tab.length);
+                clearInterval(time)
+                score.style.display = "block";
+                vitesse = Math.ceil(tab.length / ((count - (errorsCount * 0.5)) / 60));
+                let precis = Math.floor(((sens.length - errorsCount) / sens.length) * 100);
+                pourcent.innerText = `${precis}%`
+                es.innerText = `${vitesse}`;
+                errors.innerText = `${errorsCount}`;
+                console.log(tab.length);
             }
         }, 1000);
     }

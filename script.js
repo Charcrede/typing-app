@@ -6,9 +6,10 @@ document.addEventListener("DOMContentLoaded", function () {
     score = document.querySelector(".score")
     errors = document.getElementById("errors");
     input = document.getElementById("input");
-    let phrase = "La clé du succès pour taper rapidement et avec précision consiste à utiliser tous ses doigts! Pour apprendre la bonne technique de frappe, utilisez une méthode adaptée à votre clavier.";
+    let phrase = "pour être sûr que tu ne recommences pas à taper avec seulement deux ou quatre doigts, révise les leçons que tu as déjà terminées plusieurs fois cette semaine.";
     let entered = "";
     let i = 0;
+    console.log(phrase.split("").length);
     let tab = phrase.split(" ");
     let u = 0;
     let tabs = [];
@@ -25,6 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
     tabs = phrase.split("");
     input.addEventListener("input", function (key) {
         firstTap++;
+        console.log(key);
         if (firstTap === 1) {
             timing();
         }

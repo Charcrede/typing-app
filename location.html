@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Exemple de carte Google Maps avec plusieurs marqueurs</title>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIwF204lFZg1y4kPSIhKaHEXMLYxxuMhA&callback=initMap"
+      async
+      defer
+    ></script>
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCIwF204lFZg1y4kPSIhKaHEXMLYxxuMhA&callback=faceMap"></script> -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mes_css_fonts/OpenSans.css">
+</head>
+
+<body>
+    <script>
+        function initMap() {
+            let localisation = {};
+            navigator.geolocation.watchPosition((position) => {
+                localisation.lat = position.coords.latitude;
+                localisation.lng = position.coords.longitude;
+                var map = new google.maps.Map(document.getElementById("map"), {
+                    zoom: 12,
+                    center: { lat:localisation.lat, lng: localisation.lng },
+                });
+                var locations = [
+                { lat:localisation.lat, lng: localisation.lng } 
+            ];
+    
+                var markers = locations.map(function (location) {
+                    return new google.maps.Marker({
+                        position: location,
+                        map: map,
+                    });
+                });
+            });
+        }
+    </script>
+       <header>
+        <nav>
+            <a href="#"><img src="" alt="logo"></a>
+            <ul>
+                <li><a href="acceuil.html">Acceuil</a></li>
+                <li><a href="index.html">Typing</a></li>
+                <li><a href="location.html">Où suis-je ? </a></li>
+                <li><a href="#">Nous Soutenir</a></li>
+            </ul>
+        </nav>
+</header>
+    <div id="map" style="height: 400px; width: 100%;"></div>
+</body>
+
+</html>

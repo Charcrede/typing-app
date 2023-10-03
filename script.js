@@ -1,15 +1,16 @@
 document.addEventListener("DOMContentLoaded", function () {
-    sentence = document.getElementById("sentence");
-    es = document.getElementById("es");
-    temps = document.getElementById("temps");
-    pourcent = document.getElementById("pourcent");
-    score = document.querySelector(".score")
-    errors = document.getElementById("errors");
-    input = document.getElementById("input");
-    let phrase = "pour être sûr que tu ne recommences pas à taper avec seulement deux ou quatre doigts, révise les leçons que tu as déjà terminées plusieurs fois cette semaine.";
+    let sentence = document.getElementById("sentence");
+    let liens = document.querySelectorAll('.lien');
+    let es = document.getElementById("es");
+    let temps = document.getElementById("temps");
+    let pourcent = document.getElementById("pourcent");
+    let score = document.querySelector(".score")
+    let errors = document.getElementById("errors");
+    let input = document.getElementById("input");
+    let header = document.getElementById("header");
+    let phrase = "La clé du succès pour taper rapidement et avec précision consiste à utiliser tous ses doigts! Pour apprendre la bonne technique de frappe, utilisez une méthode adaptée à votre clavier.";
     let entered = "";
     let i = 0;
-    console.log(phrase.split("").length);
     let tab = phrase.split(" ");
     let u = 0;
     let tabs = [];
@@ -24,9 +25,16 @@ document.addEventListener("DOMContentLoaded", function () {
     let precis;
     let count = 0;
     tabs = phrase.split("");
+    // liens.forEach((lien)=>{
+    //     console.log("i'm in");
+    //     lien.addEventListener("click", function(){
+    //         // header.scrollTop= header.scrollHeight
+    //         // window.scroll(0, );
+    //         console.log(header.scrollHeight);
+    //     })
+    // })
     input.addEventListener("input", function (key) {
         firstTap++;
-        console.log(key);
         if (firstTap === 1) {
             timing();
         }
@@ -97,10 +105,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 pourcent.innerText = `${precis}%`
                 es.innerText = `${vitesse}`;
                 errors.innerText = `${errorsCount}`;
-                console.log(tab.length);
             }
         }, 1000);
     }
     diplayLetters();
-    console.dir(input);
 });

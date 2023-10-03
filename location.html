@@ -17,7 +17,7 @@
     <script>
         function initMap() {
             let localisation = {};
-            navigator.geolocation.watchPosition((position) => {
+            navigator.geolocation.getCurrentPosition((position) => {
                 localisation.lat = position.coords.latitude;
                 localisation.lng = position.coords.longitude;
                 var map = new google.maps.Map(document.getElementById("map"), {
@@ -37,18 +37,18 @@
             });
         }
     </script>
-       <header>
+       <header id="header">
         <nav>
             <a href="#"><img src="" alt="logo"></a>
             <ul>
-                <li><a href="acceuil.html">Acceuil</a></li>
-                <li><a href="index.html">Typing</a></li>
-                <li><a href="location.html">Où suis-je ? </a></li>
-                <li><a href="#">Nous Soutenir</a></li>
+                <li><a href="acceuil.html" class="lien">Acceuil</a></li>
+                <li><a href="index.html" class="lien">Typing</a></li>
+                <li><a href="location.html" class="lien">Où suis-je ?</a></li>
+                <li><a href="#" class="lien">Nous Soutenir</a></li>
             </ul>
         </nav>
 </header>
-    <div id="map" style="height: 400px; width: 100%;"></div>
+    <div id="map" style="height: 100vh; width: 100%;"></div>
 </body>
 
 </html>
